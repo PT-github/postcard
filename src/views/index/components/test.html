@@ -1,0 +1,32 @@
+<!DOCTYPE html>   
+<html lang="zh">   
+<head>   
+    <meta charset="UTF-8">   
+    <title>textAlign</title>   
+    <style>   
+        /* body { background: url("./images/bg3.jpg") repeat; }   */
+        /* #canvas { border: 1px solid #aaaaaa; display: block; margin: 50px auto; }    */
+    </style>   
+</head>   
+<body>   
+<div id="canvas-warp">   
+    <canvas id="canvas">   
+        你的浏览器居然不支持Canvas？！赶快换一个吧！！   
+    </canvas>   
+</div>   
+  
+<script>   
+    window.onload = function(){   
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var image = new Image()
+        image.onload = function() {
+            canvas.width = image.width
+            canvas.height = image.height
+            context.drawImage(image, 0, 0, image.width, image.height)
+        }
+        image.src = '../../../assets/img/edit/edit_01.png'
+    };   
+</script>   
+</body>   
+</html>
